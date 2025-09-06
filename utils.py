@@ -12,6 +12,10 @@ def konversi_suhu(nilai, dari, ke):
     """
     if dari == ke:
         return nilai
+    
+    # Validasi input
+    if nilai < 0 and dari == 'K':
+        raise ValueError("Suhu dalam Kelvin tidak boleh negatif.")
 
     # Konversi ke Celsius terlebih dahulu
     if dari == 'C':

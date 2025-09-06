@@ -2,18 +2,17 @@
 from utils import (konversi_suhu)
 
 # Mencetak judul program
-print("Program Konversi Suhu")
-print("======================")
+print("=== Konversi Suhu ===")
 
 # Meminta input dari pengguna dan menampilkan hasil konversi
 while True:    
     try:
         nilai = float(input("Masukkan nilai suhu: "))
-        dari = input("Masukkan satuan asal (C, F, K): ").strip().upper()
-        ke = input("Masukkan satuan tujuan (C, F, K): ").strip().upper()
+        dari = input("Dari satuan (C/F/K): ").strip().upper()
+        ke = input("Ke satuan (C/F/K): ").strip().upper()
 
         hasil = konversi_suhu(nilai, dari, ke)
-        print(f"Hasil konversi: {hasil:.2f} {ke}")
+        print(f"Hasil: {nilai:.2f}°{dari} = {hasil:.2f}°{ke}")
     except ValueError as e:
         print(f"Error: {e}")
     except Exception as e:
